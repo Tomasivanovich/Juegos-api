@@ -1,6 +1,9 @@
+// server.js
 const app = require("./api");
 
-const PORT = 3000;
+// Render asigna el puerto dinámicamente mediante process.env.PORT
+const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
-  console.log(`🚀 Servidor corriendo en http://localhost:${PORT}`);
+  console.log(`🚀 Servidor corriendo en puerto ${PORT}`);
 });

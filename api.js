@@ -5,8 +5,16 @@ const usuariosRoutes = require("./routes/usuarios");
 const puntajesRoutes = require("./routes/puntajes");
 
 const app = express();
+
+// Middleware
 app.use(express.json());
-app.use(cors());
+
+// CORS
+// Permite todos los orígenes (para desarrollo)
+// Para producción, reemplazar "*" por la URL de tu frontend
+app.use(cors({
+  origin: "*"
+}));
 
 // Rutas
 app.use("/usuarios", usuariosRoutes);
